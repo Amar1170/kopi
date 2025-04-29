@@ -23,17 +23,18 @@ const BottomNavigation = () => {
     <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-border z-40">
       <div className="flex justify-around">
         {navItems.map((item) => (
-          <Link key={item.path} href={item.path}>
-            <a className={cn(
-                "flex flex-col items-center py-2 px-4",
-                isActive(item.path) 
-                  ? "text-primary" 
-                  : "text-gray-500 dark:text-gray-400"
-              )}
-            >
-              <item.icon className="text-xl h-5 w-5" />
-              <span className="text-xs mt-1">{item.label}</span>
-            </a>
+          <Link 
+            key={item.path} 
+            href={item.path}
+            className={cn(
+              "flex flex-col items-center py-2 px-4",
+              isActive(item.path) 
+                ? "text-primary" 
+                : "text-gray-500 dark:text-gray-400"
+            )}
+          >
+            <item.icon className="text-xl h-5 w-5" />
+            <span className="text-xs mt-1">{item.label}</span>
           </Link>
         ))}
       </div>

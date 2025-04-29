@@ -43,8 +43,8 @@ const CategorySelector = ({ selectedCategoryId }: CategorySelectorProps) => {
     <div className="mb-6 pt-2">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-serif text-lg font-medium">Categories</h2>
-        <Link href="/menu">
-          <a className="text-primary text-sm font-medium">View All</a>
+        <Link href="/menu" className="text-primary text-sm font-medium">
+          View All
         </Link>
       </div>
       <ScrollArea className="w-full whitespace-nowrap">

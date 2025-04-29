@@ -45,52 +45,53 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Link href={`/product/${product.id}`}>
-      <a className="product-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm block">
-        <div className="relative">
-          {product.image_url ? (
-            <img 
-              src={product.image_url} 
-              alt={product.name} 
-              className="w-full h-40 object-cover"
-            />
-          ) : (
-            <div className="w-full h-40 bg-muted flex items-center justify-center">
-              <Coffee className="h-10 w-10 text-muted-foreground" />
-            </div>
-          )}
-          {product.featured && (
-            <div className="absolute top-2 right-2 bg-accent bg-opacity-90 px-2 py-1 rounded-full text-xs font-medium text-accent-foreground">
-              Featured
-            </div>
-          )}
-          <div className="absolute bottom-2 left-2 bg-accent bg-opacity-90 px-2 py-1 rounded-full text-xs font-bold">
-            {renderPriceIndicator()}
+    <Link 
+      href={`/product/${product.id}`}
+      className="product-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm block"
+    >
+      <div className="relative">
+        {product.image_url ? (
+          <img 
+            src={product.image_url} 
+            alt={product.name} 
+            className="w-full h-40 object-cover"
+          />
+        ) : (
+          <div className="w-full h-40 bg-muted flex items-center justify-center">
+            <Coffee className="h-10 w-10 text-muted-foreground" />
           </div>
+        )}
+        {product.featured && (
+          <div className="absolute top-2 right-2 bg-accent bg-opacity-90 px-2 py-1 rounded-full text-xs font-medium text-accent-foreground">
+            Featured
+          </div>
+        )}
+        <div className="absolute bottom-2 left-2 bg-accent bg-opacity-90 px-2 py-1 rounded-full text-xs font-bold">
+          {renderPriceIndicator()}
+        </div>
+      </div>
+      
+      <div className="p-4">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="font-medium text-lg">{product.name}</h3>
+          <span className="bg-primary bg-opacity-10 text-primary text-xs px-2 py-1 rounded">
+            {formatCurrency(product.price)}
+          </span>
         </div>
         
-        <div className="p-4">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-medium text-lg">{product.name}</h3>
-            <span className="bg-primary bg-opacity-10 text-primary text-xs px-2 py-1 rounded">
-              {formatCurrency(product.price)}
-            </span>
-          </div>
-          
-          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-            {truncateText(product.description || "", 80)}
-          </p>
-          
-          <Button 
-            onClick={handleAddToCart}
-            className="w-full"
-            size="sm"
-          >
-            <ShoppingCart className="h-4 w-4 mr-2" />
-            Add to Cart
-          </Button>
-        </div>
-      </a>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          {truncateText(product.description || "", 80)}
+        </p>
+        
+        <Button 
+          onClick={handleAddToCart}
+          className="w-full"
+          size="sm"
+        >
+          <ShoppingCart className="h-4 w-4 mr-2" />
+          Add to Cart
+        </Button>
+      </div>
     </Link>
   );
 };
