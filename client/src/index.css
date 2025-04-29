@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light brown theme for coffee shop */
+  --background: 42 38% 95%;
+  --foreground: 30 10% 15%;
+  
+  --muted: 30 10% 92%;
+  --muted-foreground: 30 10% 40%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 15%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 15%;
+  
+  --border: 30 10% 85%;
+  --input: 30 10% 85%;
+  
+  --primary: 25 70% 33%;
+  --primary-foreground: 0 0% 98%;
+  
+  --secondary: 30 50% 85%;
+  --secondary-foreground: 25 40% 25%;
+  
+  --accent: 38 80% 75%;
+  --accent-foreground: 25 40% 20%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  
+  --ring: 30 40% 50%;
+  
+  --radius: 0.5rem;
+  
+  --chart-1: 30 70% 50%;
+  --chart-2: 25 60% 40%;
+  --chart-3: 20 50% 30%;
+  --chart-4: 15 40% 25%;
+  --chart-5: 10 30% 20%;
+  
+  --sidebar-background: 30 30% 25%;
+  --sidebar-foreground: 40 30% 90%;
+  --sidebar-primary: 30 70% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 30 90% 65%;
+  --sidebar-accent-foreground: 30 15% 10%;
+  --sidebar-border: 25 40% 35%;
+  --sidebar-ring: 30 50% 60%;
+}
+
+.dark {
+  --background: 30 15% 10%;
+  --foreground: 30 10% 92%;
+  
+  --muted: 30 10% 20%;
+  --muted-foreground: 30 10% 70%;
+  
+  --popover: 30 15% 12%;
+  --popover-foreground: 30 10% 92%;
+  
+  --card: 30 15% 12%;
+  --card-foreground: 30 10% 92%;
+  
+  --border: 30 15% 25%;
+  --input: 30 15% 25%;
+  
+  --primary: 25 60% 40%;
+  --primary-foreground: 0 0% 98%;
+  
+  --secondary: 30 20% 25%;
+  --secondary-foreground: 30 10% 92%;
+  
+  --accent: 38 50% 40%;
+  --accent-foreground: 38 80% 90%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --ring: 30 50% 40%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom styles */
+.chatbot-bubble {
+  transition: all 0.3s ease;
+}
+
+.product-card {
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-indicator {
+  display: inline-flex;
+}
+
+.font-serif {
+  font-family: 'Lora', serif;
+}
