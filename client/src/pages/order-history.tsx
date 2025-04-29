@@ -17,6 +17,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Coffee, Package } from "lucide-react";
+import DownloadOrderHistory from "@/components/DownloadOrderHistory";
 import { Fragment } from "react";
 
 const getStatusColor = (status: string) => {
@@ -42,7 +43,10 @@ const OrderHistory = () => {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-serif font-medium mb-2">Order History</h1>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-2">
+          <h1 className="text-2xl font-serif font-medium">Order History</h1>
+          {orders && orders.length > 0 && <DownloadOrderHistory />}
+        </div>
         <p className="text-muted-foreground">
           View your past orders and check their status.
         </p>

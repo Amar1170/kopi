@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import ProductCard from "@/components/ProductCard";
 import CategorySelector from "@/components/CategorySelector";
 import PriceFilter from "@/components/PriceFilter";
+import DownloadMenu from "@/components/DownloadMenu";
 
 const Menu = () => {
   const { categoryId } = useParams();
@@ -40,25 +41,28 @@ const Menu = () => {
       <section>
         <div className="flex justify-between items-center mb-4">
           <h2 className="font-serif text-xl font-medium">Our Menu</h2>
-          <div className="flex items-center space-x-2">
-            <Button
-              variant={viewMode === "list" ? "default" : "outline"}
-              size="icon"
-              className="h-9 w-9"
-              onClick={() => setViewMode("list")}
-            >
-              <List className="h-4 w-4" />
-              <span className="sr-only">List view</span>
-            </Button>
-            <Button
-              variant={viewMode === "grid" ? "default" : "outline"}
-              size="icon"
-              className="h-9 w-9"
-              onClick={() => setViewMode("grid")}
-            >
-              <Grid className="h-4 w-4" />
-              <span className="sr-only">Grid view</span>
-            </Button>
+          <div className="flex items-center">
+            <div className="flex items-center space-x-2 mr-2">
+              <Button
+                variant={viewMode === "list" ? "default" : "outline"}
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => setViewMode("list")}
+              >
+                <List className="h-4 w-4" />
+                <span className="sr-only">List view</span>
+              </Button>
+              <Button
+                variant={viewMode === "grid" ? "default" : "outline"}
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => setViewMode("grid")}
+              >
+                <Grid className="h-4 w-4" />
+                <span className="sr-only">Grid view</span>
+              </Button>
+            </div>
+            <DownloadMenu />
           </div>
         </div>
 
